@@ -36,6 +36,11 @@ function App() {
       <div className="black-nav">
         <div style={{ mystyle }}>계발 Blog</div>
       </div>
+      <div className="list">
+        <h3> {posts} </h3>
+        <p>7월 15일 발행</p>
+        <hr />
+      </div>
       <img src={logo} />
       <h4>{posts}</h4>
     </div>
