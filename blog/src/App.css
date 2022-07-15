@@ -19,6 +19,12 @@ body {
   padding-left: 20px;
   padding-right: 20px;
 }
+.list2 {
+  margin-top: 30px;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 1000px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

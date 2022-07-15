@@ -17,7 +17,12 @@ function App() {
   var [a, b] = [10, 100];
 
   //useState 함수는 실행을 하면 array가 남는데 a(글제목)는 진짜데이터 b(글제목변경)는 데이터를 수정하기위한 함수
-  let [글제목, 글제목변경] = useState(["남자 코트 추천", "강남 우동 맛집"]);
+  let [글제목, 글제목변경] = useState([
+    "남자 코트 추천",
+    "강남 우동 맛집",
+    "남자 바지 추천",
+    "남자 신발 추천",
+  ]);
 
   //16번째줄을 서버에서 가져온 데이터라고 치면
   let posts = "강남 고기 맛집";
@@ -47,8 +52,23 @@ function App() {
         <div style={{ mystyle }}>계발 Blog</div>
       </div>
       <div className="list">
-        <h3> {글제목} </h3>
+        <h3> {글제목[0]} </h3>
         <p>7월 15일 발행</p>
+        <hr />
+      </div>
+      <div className="list2">
+        <h3> {글제목[1]} </h3>
+        <p>7월 16일 발행</p>
+        <hr />
+      </div>
+      <div className="list2">
+        <h3> {글제목[2]} </h3>
+        <p>7월 16일 발행</p>
+        <hr />
+      </div>
+      <div className="list2">
+        <h3> {글제목[3]} </h3>
+        <p>7월 16일 발행</p>
         <hr />
       </div>
       <img src={logo} />
