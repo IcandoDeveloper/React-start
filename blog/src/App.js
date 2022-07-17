@@ -24,6 +24,8 @@ function App() {
     "남자 신발 추천",
   ]);
 
+  let [좋아요, 좋아요변경] = useState(0);
+  let [글제목2, 글제목변경2] = useState(["여자 코트 추천"]);
   //16번째줄을 서버에서 가져온 데이터라고 치면
   let posts = "강남 고기 맛집";
   //45번째 줄에 19번째줄의 데이터를 보여줘야함 445번째 줄에 <div className = { posts }계발 Blog</div> 라고 적어야함
@@ -51,22 +53,39 @@ function App() {
       <div className="black-nav">
         <div style={{ mystyle }}>계발 Blog</div>
       </div>
+      <button
+        onClick={() => {
+          글제목변경([글제목2, 글제목[1], 글제목[2], 글제목[3]]);
+        }}
+      >
+        버튼
+      </button>
       <div className="list">
-        <h3> {글제목[0]} </h3>
+        <h3>
+          {글제목[0]}
+          <span
+            onClick={() => {
+              좋아요변경(좋아요 + 1);
+            }}
+          >
+            👍
+          </span>
+          {좋아요}
+        </h3>
         <p>7월 15일 발행</p>
         <hr />
       </div>
-      <div className="list2">
+      <div className="list">
         <h3> {글제목[1]} </h3>
         <p>7월 16일 발행</p>
         <hr />
       </div>
-      <div className="list2">
+      <div className="list">
         <h3> {글제목[2]} </h3>
         <p>7월 16일 발행</p>
         <hr />
       </div>
-      <div className="list2">
+      <div className="list">
         <h3> {글제목[3]} </h3>
         <p>7월 16일 발행</p>
         <hr />
