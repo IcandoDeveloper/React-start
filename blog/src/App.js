@@ -7,6 +7,12 @@
 //4. 변수를 안쓰고 state를 쓰는이유?
 //4번 답 react를 웹 앱처럼 동작하게 만들고 싶어서 사용하는 것임
 //4번 답 보충  변수는 변경했을 때 새로고침이 돼야 재랜더링이 되는 반면, state를 사용하게 되면 HTML이 자동으로 재랜더링됨
+//5번 HTML을 줄여서 쓸 수 있는 방법?
+//5번 답 Component문법
+//5번 답 추가설명1 반복적인 작업들을 component문법을 사용하면 좋음
+//5번답 추가설명2 자주변경는 HTML UI들이 있을 때 사용하면 좋음
+//5번답 추가설명3 다른페이지 만들 때도 컴포넌트로 만듦
+//5번답 추가설명4 단점으로는 state 사용할 때 복잡해짐
 import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
@@ -92,8 +98,21 @@ function App() {
         <p>7월 16일 발행</p>
         <hr />
       </div>
+
+      <Modal></Modal>
+
       <img src={logo} />
       <h4>{posts}</h4>
+    </div>
+  );
+}
+
+function Modal() {
+  return (
+    <div className="modal">
+      <h2>제목</h2>
+      <p>날짜</p>
+      <p>상세내용</p>
     </div>
   );
 }
