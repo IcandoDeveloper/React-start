@@ -25,7 +25,15 @@ function App() {
   ]);
 
   let [좋아요, 좋아요변경] = useState(0);
-  let [글제목2, 글제목변경2] = useState(["여자 코트 추천"]);
+  function 제목바꾸기() {
+    //기존 state카피본 만듬 아래처럼
+    //다른 곳에서 데이터를 복사할 때는 deep copy [...데이터]이런식으로 복사를 해야함 안그러면 복사가아닌 값공유느낌으로 설정이됨
+    //카피본 수정사항 반영하고
+    //변경함수()이거 꼭 집어 넣기!!!
+    var newArray = [...글제목];
+    newArray[0] = "여자 코트 추천";
+    글제목변경(newArray);
+  }
   //16번째줄을 서버에서 가져온 데이터라고 치면
   let posts = "강남 고기 맛집";
   //45번째 줄에 19번째줄의 데이터를 보여줘야함 445번째 줄에 <div className = { posts }계발 Blog</div> 라고 적어야함
@@ -53,13 +61,7 @@ function App() {
       <div className="black-nav">
         <div style={{ mystyle }}>계발 Blog</div>
       </div>
-      <button
-        onClick={() => {
-          글제목변경([글제목2, 글제목[1], 글제목[2], 글제목[3]]);
-        }}
-      >
-        버튼
-      </button>
+      <button onClick={제목바꾸기}>버튼</button>
       <div className="list">
         <h3>
           {글제목[0]}
